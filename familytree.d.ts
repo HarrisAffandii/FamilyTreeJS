@@ -2692,4 +2692,4 @@ declare namespace FamilyTree {
     };
 
     var t: any;
-}export default FamilyTree
+}
