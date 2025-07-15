@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,23 +7,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Home</title>
         <link rel="stylesheet" href="styles.css">
-        <script src="familytree.js" defer></script>
+        <script src="familytree.js"></script>
+        <reference path="FamilyTree.d.ts" />
     </head>
 
     <body>
-        <div id="tree">
+        <div id="tree" width="500px">
             <script>
 
                 let family = new FamilyTree("#tree", {
                     // options
+                    mode: "dark",
+                    template: "tommy",
                     nodeBinding: {
                         field_0: "name"
                     },
                     nodes: [
-                        { id: 1, pids: [2], name: "Amber McKenzie", gender: "female" },
-                        { id: 2, pids: [1], name: "Ava Field", gender: "male" },
-                        { id: 3, mid: 1, fid: 2, name: "Peter Stevens", gender: "male" }
-                    ]  
+                        { id: 21, pids: [22], name: "grandmother", gender: "female" },
+                        { id: 22, pids: [21], name: "grandfather", gender: "male" },
+                        { id: 11, mid: 21, fid: 22, pids: [12], name: "mother", gender: "female" },
+                        { id: 12, pids: [11], name: "father", gender: "male" },
+                        { id: 13, mid: 21, fid: 22, tags: ["node-with-subtrees"] },
+                        { id: 14, stpid: 13, name: "uncle", gender: "male" },
+                        { id: 15, stpid: 13, name: "aunt", gender: "female" },
+                        { id: 1, mid: 11, fid: 12, pids: [2], name: "me", gender: "female" },
+                        { id: 2, pids: [1], name: "my husband", gender: "male" },
+                        { id: 3, mid: 1, fid: 2, name: "our child", gender: "male" } ]  
                 });
              
             </script> 
